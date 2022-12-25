@@ -9,3 +9,4 @@ class SaleOrder(models.Model):
 
     type = fields.Selection([('quotation','Quotation'),
                              ('sale','Sale')],string='Type')
+    state_sale = fields.Selection(related='state',store=False)
