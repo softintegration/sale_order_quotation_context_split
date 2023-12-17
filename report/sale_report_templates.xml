@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template inherit_id="sale.report_saleorder_document" id="report_saleorder_document_inherited">
+        <xpath expr="//div[hasclass('page')]/h2[hasclass('mt16')]" position="replace">
+            <h2 class="mt16">
+                <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                    <span t-if="doc.type == 'sale' and doc.state not in ['draft','sent']">Order # </span>
+                    <span t-if="doc.type == 'quotation' or doc.state in ['draft','sent']">Quotation # </span>
+                </t>
+                <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                    <span>Pro-Forma Invoice # </span>
+                </t>
+                <span t-field="doc.name"/>
+            </h2>
+        </xpath>
+    </template>
+
+</odoo>
