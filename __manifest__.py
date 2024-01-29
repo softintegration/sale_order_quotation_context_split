@@ -2,7 +2,7 @@
 
 {
     'name': 'Split-up the Quotation management from the Sale orders',
-    'version': '1.0.1.2',
+    'version': '1.0.1.3',
     'author':'Soft-integration',
     'category': 'Sale',
     'summary': 'Split-up the Quotation management from the Sale orders',
